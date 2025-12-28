@@ -31,6 +31,18 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Update CSS variable for the current theme
+    document.documentElement.style.setProperty(
+      '--bg-primary',
+      isDark ? config.mainColorDark : config.mainColor
+    );
+    
+    // Update theme-color meta tag when theme changes
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', isDark ? config.mainColorDark : config.mainColor);
+    }
   }, [isDark]);
 
   const toggleTheme = () => {
