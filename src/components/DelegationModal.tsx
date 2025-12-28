@@ -49,6 +49,14 @@ function SingleTokenDelegation({
   const success = isSuccess || isSuccessAll;
   const txError = error || errorAll;
 
+  // Check if already delegated to NTV (case-insensitive comparison)
+  const isDelegatedToNTV = (address: string | undefined) => 
+    address?.toLowerCase() === delegatee.toLowerCase();
+  
+  const isVotingDelegatedToNTV = isDelegatedToNTV(status.votingDelegatee);
+  const isPropositionDelegatedToNTV = isDelegatedToNTV(status.propositionDelegatee);
+  const isFullyDelegatedToNTV = isVotingDelegatedToNTV && isPropositionDelegatedToNTV;
+
   useEffect(() => {
     if (success) {
       status.refetch();
@@ -208,22 +216,35 @@ function SingleTokenDelegation({
       )}
 
       <div className="delegation-actions">
-        <button
-          className="delegation-btn primary"
-          onClick={handleDelegate}
-          disabled={isLoading}
-        >
-          {isLoading ? 'Processing...' : `Delegate to ${config.delegateName}`}
-        </button>
-        
-        {status.isPartiallyDelegated && (
+        {isFullyDelegatedToNTV ? (
+          // Already fully delegated to NTV - show remove button
           <button
             className="delegation-btn secondary"
             onClick={handleUndelegate}
             disabled={isLoading}
           >
-            {isLoading ? 'Processing...' : 'Remove Delegation'}
+            {isLoading ? 'Processing...' : `Remove delegation to ${config.delegateName}`}
           </button>
+        ) : (
+          <>
+            <button
+              className="delegation-btn primary"
+              onClick={handleDelegate}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Processing...' : `Delegate to ${config.delegateName}`}
+            </button>
+            
+            {status.isPartiallyDelegated && !isFullyDelegatedToNTV && (
+              <button
+                className="delegation-btn secondary"
+                onClick={handleUndelegate}
+                disabled={isLoading}
+              >
+                {isLoading ? 'Processing...' : 'Remove Delegation'}
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>
