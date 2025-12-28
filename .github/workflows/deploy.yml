@@ -35,6 +35,7 @@ jobs:
         env:
           VITE_DELEGATE_ADDRESS: ${{ vars.VITE_DELEGATE_ADDRESS }}
           VITE_DELEGATE_NAME: ${{ vars.VITE_DELEGATE_NAME }}
+          VITE_LOGO_NAME: ${{ vars.VITE_LOGO_NAME }}
           VITE_WALLETCONNECT_PROJECT_ID: ${{ secrets.VITE_WALLETCONNECT_PROJECT_ID }}
           # Set base path if deploying to subdirectory (e.g., /repo-name/)
           VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
