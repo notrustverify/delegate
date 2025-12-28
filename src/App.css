@@ -22,12 +22,13 @@
 }
 
 .logo-text {
-  font-family: var(--font-mono);
+  font-family: var(--font-logo);
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .logo-japanese {
@@ -501,10 +502,7 @@
 }
 
 .footer-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  text-align: center;
 }
 
 .footer-inspired {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAccount } from 'wagmi';
+import { useAppKit } from '@reown/appkit/react';
 import { Header } from './components/Header';
 import { TokenCard } from './components/TokenCard';
 import { Footer } from './components/Footer';
@@ -10,6 +11,7 @@ import './App.css';
 
 function App() {
   const { isConnected } = useAccount();
+  const { open } = useAppKit();
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme');
     if (saved) {
@@ -37,8 +39,8 @@ function App() {
 
   const handleCardClick = (tokenType: TokenType | 'all') => {
     if (!isConnected) {
-      // Could show a toast/message to connect wallet first
-      alert('Please connect your wallet first');
+      // Open wallet connection modal
+      open();
       return;
     }
     setDelegationModal({ isOpen: true, tokenType });
@@ -56,7 +58,7 @@ function App() {
         <section className="hero">
           <h1 className="hero-title">Delegation Hub</h1>
           <p className="hero-subtitle">
-            The platform for delegating your tokens to {config.delegateName} ({getDisplayAddress()})
+          Own your tokens, delegate your voting power to {config.delegateName} ({getDisplayAddress()})
           </p>
         </section>
 
@@ -64,7 +66,7 @@ function App() {
           <TokenCard
             variant="all"
             title="All tokens"
-            description={`Delegate your AAVE, stkAAVE & aAAVE to {delegateAddress}`}
+            description={`Delegate voting power of your AAVE, stkAAVE & aAAVE to {delegateAddress}`}
             onClick={() => handleCardClick('all')}
           />
           
@@ -72,13 +74,13 @@ function App() {
             <TokenCard
               variant="aave"
               title="AAVE"
-              description={`Delegate your AAVE tokens to {delegateAddress}`}
+              description={`Delegate voting power of your AAVE to {delegateAddress}`}
               onClick={() => handleCardClick('aave')}
             />
             <TokenCard
               variant="stkaave"
               title="stkAAVE"
-              description={`Delegate your stkAAVE tokens to {delegateAddress}`}
+              description={`Delegate voting power of your stkAAVE to {delegateAddress}`}
               onClick={() => handleCardClick('stkaave')}
             />
           </div>

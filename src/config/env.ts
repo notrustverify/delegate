@@ -2,6 +2,7 @@
 export const config = {
   delegateAddress: import.meta.env.VITE_DELEGATE_ADDRESS,
   delegateName: import.meta.env.VITE_DELEGATE_NAME,
+  logoName: import.meta.env.VITE_LOGO_NAME || import.meta.env.VITE_DELEGATE_NAME,
 } as const;
 
 // Helper to check if string is an Ethereum address (not ENS)

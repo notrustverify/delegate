@@ -11,7 +11,7 @@ export function Header({ isDark, onToggleTheme }: HeaderProps) {
   return (
     <header className="header">
       <div className="logo">
-        <span className="logo-text">{config.delegateName}</span>
+        <span className="logo-text">{config.logoName}</span>
       </div>
       
       <div className="header-actions">
