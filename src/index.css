@@ -1,0 +1,110 @@
+:root {
+  /* Light theme colors - NTV Lime/Yellow-Green */
+  --bg-primary: #e8f8a6;
+  --bg-secondary: #f0fabd;
+  --bg-card: #f5fcd4;
+  --bg-card-hover: #eefac0;
+  
+  --text-primary: #0a0a0a;
+  --text-secondary: #3d3d3d;
+  --text-tertiary: #666666;
+  --text-accent: #2d5016;
+  
+  --border-color: #c5d98a;
+  --border-accent: #9cbd4a;
+  
+  --accent-primary: #7ab317;
+  --accent-light: #9cbd4a;
+  --accent-dark: #5a8a0f;
+  
+  --aave-blue: #b4a7d6;
+  --aave-yellow: #fbbf24;
+  --aave-pink: #e9d5ff;
+  
+  /* Keep purple for backward compat */
+  --purple-primary: #7ab317;
+  --purple-light: #9cbd4a;
+  --purple-dark: #5a8a0f;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Segoe UI Mono', 'Liberation Mono', Menlo, Monaco, Consolas, monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0d1208;
+  --bg-secondary: #151f0e;
+  --bg-card: #1a2812;
+  --bg-card-hover: #243518;
+  
+  --text-primary: #f0f7d0;
+  --text-secondary: #b8cc8a;
+  --text-tertiary: #7a8a5a;
+  --text-accent: #9cbd4a;
+  
+  --border-color: #3a4a28;
+  --border-accent: #7ab317;
+  
+  --purple-primary: #9cbd4a;
+  --purple-light: #b8d46a;
+  --purple-dark: #7ab317;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
