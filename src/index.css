@@ -1,8 +1,8 @@
-/* Bowlby One Font - Bold display font (Druk Wide alternative) */
+/* Druk Wide Bold Trial Font */
 @font-face {
-  font-family: 'Bowlby One';
-  src: url('/fonts/BowlbyOne-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'Druk Wide';
+  src: url('/fonts/DrukWideBoldTrial.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -44,7 +44,7 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
   
-  --font-logo: 'Bowlby One', 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  --font-logo: 'Druk Wide', 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Segoe UI Mono', 'Liberation Mono', Menlo, Monaco, Consolas, monospace;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   
