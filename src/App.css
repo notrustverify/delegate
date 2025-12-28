@@ -316,11 +316,45 @@
 }
 
 .hero-subtitle {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 380px;
+  max-width: 900px;
   margin: 0 auto;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+.delegate-info {
+  position: relative;
+  cursor: pointer;
+  color: var(--text-accent);
+  font-weight: 500;
+  border-bottom: 1px dashed var(--text-accent);
+}
+
+.delegate-info::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 0.5rem;
+  z-index: 10;
+}
+
+.delegate-info:hover::before {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Token Cards Grid */

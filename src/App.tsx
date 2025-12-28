@@ -58,7 +58,10 @@ function App() {
         <section className="hero">
           <h1 className="hero-title">Delegation Hub</h1>
           <p className="hero-subtitle">
-          Own your tokens, delegate your voting power to {config.delegateName} ({getDisplayAddress()})
+            Own your tokens, delegate your voting power to{' '}
+            <span className="delegate-info" data-tooltip={config.delegateAddress}>
+              {config.delegateName} ({getDisplayAddress()})
+            </span>
           </p>
         </section>
 
@@ -66,7 +69,7 @@ function App() {
           <TokenCard
             variant="all"
             title="All tokens"
-            description={`Delegate voting power of your AAVE, stkAAVE & aAAVE to {delegateAddress}`}
+            description={`Delegate voting power of your AAVE, stkAAVE & aAAVE`}
             onClick={() => handleCardClick('all')}
           />
           
@@ -74,13 +77,13 @@ function App() {
             <TokenCard
               variant="aave"
               title="AAVE"
-              description={`Delegate voting power of your AAVE to {delegateAddress}`}
+              description={`Delegate voting power of your AAVE`}
               onClick={() => handleCardClick('aave')}
             />
             <TokenCard
               variant="stkaave"
               title="stkAAVE"
-              description={`Delegate voting power of your stkAAVE to {delegateAddress}`}
+              description={`Delegate voting power of your stkAAVE`}
               onClick={() => handleCardClick('stkaave')}
             />
           </div>
