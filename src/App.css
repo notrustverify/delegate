@@ -419,11 +419,17 @@
 
 .cards-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .cards-row {
     grid-template-columns: 1fr;
   }
@@ -476,7 +482,7 @@
 .token-icon .token-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .token-icon.aave {
@@ -489,17 +495,6 @@
 
 .token-icon.aaave {
   background: transparent;
-  border: 2px solid transparent;
-  position: relative;
-}
-
-.token-icon.aaave::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #c084fc, #a855f7, #7c3aed);
-  z-index: -1;
 }
 
 .token-icon.large {
@@ -572,7 +567,7 @@
 }
 
 .token-card {
-  animation: fadeIn 0.6s ease-out;
+  /* animation: fadeIn 0.6s ease-out; */
   animation-fill-mode: both;
 }
 

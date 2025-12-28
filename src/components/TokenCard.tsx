@@ -1,9 +1,10 @@
 import aaveIcon from '../assets/tokens/aave.svg';
 import stkAaveIcon from '../assets/tokens/stkaave.svg';
+import aAaveIcon from '../assets/tokens/aaave.svg';
 import { config, getDisplayAddress } from '../config/env';
 
 interface TokenCardProps {
-  variant: 'all' | 'aave' | 'stkaave';
+  variant: 'all' | 'aave' | 'stkaave' | 'aaave';
   title: string;
   description: string;
   onClick?: () => void;
@@ -15,7 +16,7 @@ function TokenIcon({ type, size = 'normal' }: { type: 'aave' | 'stkaave' | 'aaav
   const icons = {
     aave: aaveIcon,
     stkaave: stkAaveIcon,
-    aaave: aaveIcon, // Use AAVE icon for aAAVE as well
+    aaave: aAaveIcon,
   };
   
   return (
@@ -52,7 +53,7 @@ export function TokenCard({ variant, title, description, onClick }: TokenCardPro
         </div>
       ) : (
         <div className="token-icons">
-          <TokenIcon type={variant} size="large" />
+          <TokenIcon type={variant as 'aave' | 'stkaave' | 'aaave'} size="large" />
         </div>
       )}
       

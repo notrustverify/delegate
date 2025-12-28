@@ -86,6 +86,12 @@ function App() {
               description={`Delegate voting power of your stkAAVE`}
               onClick={() => handleCardClick('stkaave')}
             />
+            <TokenCard
+              variant="aaave"
+              title="aAAVE"
+              description={`Delegate voting power of your aAAVE`}
+              onClick={() => handleCardClick('aaave')}
+            />
           </div>
         </div>
       </main>

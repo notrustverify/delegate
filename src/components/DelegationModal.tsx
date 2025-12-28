@@ -6,6 +6,7 @@ import { DELEGATION_TYPE, type TokenType, TOKENS } from '../config/contracts';
 import { config } from '../config/env';
 import aaveIcon from '../assets/tokens/aave.svg';
 import stkAaveIcon from '../assets/tokens/stkaave.svg';
+import aAaveIcon from '../assets/tokens/aaave.svg';
 
 interface DelegationModalProps {
   isOpen: boolean;
@@ -20,9 +21,10 @@ function formatAddress(address: string): string {
 }
 
 function TokenIcon({ type }: { type: TokenType }) {
-  const icons = {
+  const icons: Record<TokenType, string> = {
     aave: aaveIcon,
     stkaave: stkAaveIcon,
+    aaave: aAaveIcon,
   };
   
   return <img src={icons[type]} alt={type} className="delegation-token-icon" />;
@@ -257,7 +259,7 @@ export function DelegationModal({ isOpen, onClose, tokenType }: DelegationModalP
   if (!isOpen) return null;
 
   const tokensToShow: TokenType[] = tokenType === 'all' 
-    ? ['aave', 'stkaave'] 
+    ? ['aave', 'stkaave', 'aaave'] 
     : [tokenType];
 
   const handleSuccess = () => {

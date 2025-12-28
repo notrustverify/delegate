@@ -1,6 +1,7 @@
 // AAVE Token Contract Addresses
 export const AAVE_TOKEN_ADDRESS = '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9' as const;
 export const STK_AAVE_TOKEN_ADDRESS = '0x4da27a545c0c5b758a6ba100e3a049001de870f5' as const;
+export const A_AAVE_TOKEN_ADDRESS = '0xa700b4eb416be35b2911fd5dee80678ff64ff6c9' as const;
 
 // Delegation Types
 export const DELEGATION_TYPE = {
@@ -76,6 +77,11 @@ export const TOKENS = {
     address: STK_AAVE_TOKEN_ADDRESS,
     name: 'Staked AAVE',
     symbol: 'stkAAVE',
+  },
+  aaave: {
+    address: A_AAVE_TOKEN_ADDRESS,
+    name: 'Aave AAVE',
+    symbol: 'aAAVE',
   },
 } as const;
 
